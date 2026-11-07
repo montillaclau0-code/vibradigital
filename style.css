@@ -1,3 +1,14 @@
+/* ---------- Desplazamiento suave (botón "Ver programación") ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 /* ---------- Colores y base ---------- */
 :root {
   --fondo: #050913;
