@@ -56,10 +56,26 @@ function mostrarFueraDelAire() {
     : "Vuelve pronto";
 }
 
+// Evita que un segundo toque cancele la conexión mientras todavía está conectando
+let conectando = false;
+
+// Si tarda demasiado en conectar, se rinde después de estos milisegundos
+function limiteDeEspera(ms) {
+  return new Promise((_, rechazar) =>
+    setTimeout(() => rechazar(new Error("tiempo agotado")), ms)
+  );
+}
+
 btn.addEventListener("click", async () => {
+  if (conectando) return; // ya está conectando: no hacemos nada
+
   if (radio.paused) {
+    conectando = true;
+    btn.textContent = "…";
+    titulo.textContent = "Conectando…";
+    estado.textContent = "Esto puede tardar unos segundos";
     try {
-      await radio.play();
+      await Promise.race([radio.play(), limiteDeEspera(15000)]);
       mostrarSonando(true);
       titulo.textContent = "Transmisión en vivo";
       estado.textContent = "Sonando ahora";
@@ -67,7 +83,11 @@ btn.addEventListener("click", async () => {
       // Pasa si nadie está transmitiendo, si la URL está mal, si no hay internet o si hay VPN
       console.log("Error:", error.name, error.message);
       console.log("URL usada:", radio.src);
+      radio.pause();
+      radio.load();
       mostrarFueraDelAire();
+    } finally {
+      conectando = false;
     }
   } else {
     radio.pause();
