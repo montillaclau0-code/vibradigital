@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibra Digital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>VIBRA DIGITAL</h1>
+    <p class="eslogan">La música que activa tus sentidos</p>
+  </header>
+
+  <main>
+
+    <!-- Reproductor: audífonos + tarjeta que los cruza -->
+    <section id="reproductor">
+      <img src="audifonos.png" alt="Audífonos" class="audifonos">
+
+      <div class="tarjeta" id="tarjeta">
+        <div class="info">
+          <p class="titulo-cancion">Transmisión en vivo</p>
+          <p class="artista" id="estado">Vibra Digital Radio</p>
+        </div>
+
+        <div class="onda" aria-hidden="true">
+          <span style="--h:30%"></span>
+          <span style="--h:50%"></span>
+          <span style="--h:35%"></span>
+          <span style="--h:70%"></span>
+          <span style="--h:90%"></span>
+          <span style="--h:60%"></span>
+          <span style="--h:100%"></span>
+          <span style="--h:75%"></span>
+          <span style="--h:45%"></span>
+          <span style="--h:85%"></span>
+          <span style="--h:55%"></span>
+          <span style="--h:95%"></span>
+          <span style="--h:65%"></span>
+          <span style="--h:40%"></span>
+          <span style="--h:80%"></span>
+          <span style="--h:50%"></span>
+          <span style="--h:30%"></span>
+          <span style="--h:20%"></span>
+        </div>
+
+        <div class="controles">
+          <button id="btn" aria-label="Reproducir">▶</button>
+        </div>
+      </div>
+
+      <!-- Segunda copia de los audífonos: tapa la tarjeta solo donde pasa la diadema -->
+      <img src="audifonos.png" alt="" class="audifonos audifonos-frente" aria-hidden="true">
+
+      <!-- Mascota: parada sobre la tarjeta; al tocarla enciende o pausa la radio -->
+      <button class="mascota" id="mascota" aria-label="Reproducir la radio">
+        <img src="mickey.png" alt="">
+        <span class="mascota-globo" aria-hidden="true">¡Dale play!</span>
+      </button>
+
+      <audio id="radio" src="https://radios.yanapak.org/vibradigital2026"></audio>
+    </section>
+
+    <!-- Tres características -->
+    <section id="caracteristicas">
+      <div class="item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg>
+        <h3>Sonido<br>nítido</h3>
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2"/><path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 8.5a5 5 0 0 1 0 7M5.5 5.5a9 9 0 0 0 0 13M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+        <h3>24 horas<br>en vivo</h3>
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="14" height="10" rx="1.5"/><path d="M6 19h6M9 15v4"/><rect x="18" y="8" width="4" height="9" rx="1"/></svg>
+        <h3>En todos tus<br>dispositivos</h3>
+      </div>
+    </section>
+
+    <a class="boton-pildora" href="#programacion">Ver programación</a>
+
+    <section id="programacion">
+      <h2>Programación</h2>
+      <ul>
+        <li><strong>6:00 AM</strong> Despertar Digital</li>
+        <li><strong>12:00 PM</strong> Mediodía Musical</li>
+        <li><strong>6:00 PM</strong> Hora Pico</li>
+        <li><strong>9:00 PM</strong> Noche Vibra</li>
+      </ul>
+    </section>
+
+    <section id="pedidos">
+      <svg class="pedidos-mic" viewBox="0 0 120 160" aria-hidden="true">
+        <rect x="40" y="10" width="40" height="70" rx="20"/>
+        <path d="M44 30h32M44 45h32M44 60h32"/>
+        <path d="M25 65v10a35 35 0 0 0 70 0V65"/>
+        <path d="M60 110v32M38 146h44"/>
+      </svg>
+      <p class="cursiva">Llama y pide tu canción</p>
+      <p class="pedidos-dato">WhatsApp: 0412-672-8716</p>
+    </section>
+
+    <section id="contacto">
+      <h2>Claudia Montilla</h2>
+      <p>Carrera: PNF-INFORMATICA</p>
+      <p>Correo: montillaclau0@gmail.com</p>
+      <p>Instagram: @vibradigital</p>
+    </section>
+
+  </main>
+
+  <footer class="creditos">
+    <p>Mascota: Mickey Mouse en <em>Steamboat Willie</em> (1928), de dominio público en EE. UU. Foto de los audífonos: Pexels.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
