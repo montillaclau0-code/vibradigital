@@ -2,7 +2,7 @@
 
 Radio online con una página web donde se escucha la transmisión en vivo.
 
-**Link:** https://tuusuario.github.io/vibradigital/
+**Link:** https://montillaclau0-code.github.io/vibradigital/
 
 ## Qué incluye
 - Reproductor en vivo con botón de play y onda de sonido animada
